@@ -1,0 +1,30 @@
+{
+  "name": "super-toat",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "watch": "parcel watch wp-content/themes/super-toat/src/parcel-entrypoint.js --out-file=site --out-dir=wp-content/themes/super-toat/dist --public-url ./",
+    "build": "rm -r dist/* && parcel build wp-content/themes/super-toat/src/parcel-entrypoint.js --out-file=site --out-dir=wp-content/themes/super-toat/dist --public-url ./"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://aaronmeder@github.com/aaronmeder/super-toat.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://aaronmeder@github.com/aaronmeder/super-toat/issues"
+  },
+  "homepage": "https://aaronmeder@github.com/aaronmeder/super-toat#readme",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4",
+    "parcel-plugin-watch-reload": "0.0.2",
+    "postcss-modules": "^1.5.0",
+    "sass": "^1.25.0"
+  },
+  "watchreload": {
+    "files": "**/*.php"
+  }
+}

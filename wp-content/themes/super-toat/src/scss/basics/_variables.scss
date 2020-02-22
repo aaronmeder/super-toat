@@ -1,0 +1,50 @@
+/* --- Variables ---------------------------- */
+
+/* Colors
+------------- */
+
+$very-light-grey: #f1f2f1;
+
+
+/* Fonts
+------------- */
+
+$primary-font: 'Archivo Black', 'Arial Black', sans-serif;
+
+
+/* Sizing Units
+------------- */
+
+$sizing-xs:        0.25rem;
+$sizing-sm:    2 * $sizing-xs;
+$sizing-md:    5 * $sizing-xs;
+$sizing-lg:   10 * $sizing-xs;
+$sizing-xl:   20 * $sizing-xs;
+
+
+/* Breakpoints
+------------- */
+
+@mixin sm {
+  @media (min-width: 0) {
+    @content;
+  }
+}
+
+@mixin md {
+  @media (min-width: #{$size-sm}) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @media (min-width: #{$size-lg}) {
+    @content;
+  }
+}
+
+@mixin xl {
+  @media (min-width: #{$size-xl}) {
+    @content;
+  }
+}
