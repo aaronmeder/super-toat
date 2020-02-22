@@ -1,127 +1,87 @@
 <?php
 /**
- * The template file for displaying the comments and comment form 
+ * The template for displaying Comments.
+ *
+ * The area of the page that contains both current comments
+ * and the comment form. 
  */
+?>
 
-/*
- * If the current post is protected by a password and
- * the visitor has not yet entered the password we will
- * return early without loading the comments.
-*/
-if ( post_password_required() ) {
-	return;
-}
+<?php
+	/*
+	 * If the current post is protected by a password and
+	 * the visitor has not yet entered the password we will
+	 * return early without loading the comments.
+	 */
+	if ( post_password_required() )
+		return;
+?>
 
-if ( $comments ) {
-	?>
+	<div id="comments" class="comments-area">
 
-	<div class="comments" id="comments">
+	<?php // You can start editing here -- including this comment! ?>
 
-		<?php
-		$comments_number = absint( get_comments_number() );
-		?>
-
-		<div class="comments-header section-inner small max-percentage">
-
-			<h2 class="comment-reply-title">
+	<?php if ( have_comments() ) : ?>
+		<h2 class="comments-title">
 			<?php
-			if ( ! have_comments() ) {
-				_e( 'Leave a comment', 'twentytwenty' );
-			} elseif ( '1' === $comments_number ) {
-				/* translators: %s: post title */
-				printf( _x( 'One reply on &ldquo;%s&rdquo;', 'comments title', 'twentytwenty' ), esc_html( get_the_title() ) );
-			} else {
-				echo sprintf(
-					/* translators: 1: number of comments, 2: post title */
-					_nx(
-						'%1$s reply on &ldquo;%2$s&rdquo;',
-						'%1$s replies on &ldquo;%2$s&rdquo;',
-						$comments_number,
-						'comments title',
-						'twentytwenty'
-					),
-					number_format_i18n( $comments_number ),
-					esc_html( get_the_title() )
-				);
-			}
-
+				printf( _n( 'Ein Kommentar', '%1$s Kommentare', get_comments_number(), 'toat' ),
+					number_format_i18n( get_comments_number() ), '<span>' . get_the_title() . '</span>' );
 			?>
-			</h2><!-- .comments-title -->
+		</h2>
 
-		</div><!-- .comments-header -->
+		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
+		<nav role="navigation" id="comment-nav-above" class="site-navigation comment-navigation">
+			<h1 class="assistive-text"><?php _e( 'Comment navigation', 'toat' ); ?></h1>
+			<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'toat' ) ); ?></div>
+			<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'toat' ) ); ?></div>
+		</nav><!-- #comment-nav-before .site-navigation .comment-navigation -->
+		<?php endif; // check for comment navigation ?>
 
-		<div class="comments-inner section-inner thin max-percentage">
-
+		<ol class="commentlist">
 			<?php
-			/* wp_list_comments(
-				array(
-					'walker'      => new TwentyTwenty_Walker_Comment(),
-					'avatar_size' => 120,
-					'style'       => 'div',
-				)
-			); */
-
-			$comment_pagination = paginate_comments_links(
-				array(
-					'echo'      => false,
-					'end_size'  => 0,
-					'mid_size'  => 0,
-					'next_text' => __( 'Newer Comments', 'twentytwenty' ) . ' <span aria-hidden="true">&rarr;</span>',
-					'prev_text' => '<span aria-hidden="true">&larr;</span> ' . __( 'Older Comments', 'twentytwenty' ),
-				)
-			);
-
-			if ( $comment_pagination ) {
-				$pagination_classes = '';
-
-				// If we're only showing the "Next" link, add a class indicating so.
-				if ( false === strpos( $comment_pagination, 'prev page-numbers' ) ) {
-					$pagination_classes = ' only-next';
-				}
-				?>
-
-				<nav class="comments-pagination pagination<?php echo $pagination_classes; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- static output ?>" aria-label="<?php esc_attr_e( 'Comments', 'twentytwenty' ); ?>">
-					<?php echo wp_kses_post( $comment_pagination ); ?>
-				</nav>
-
-				<?php
-			}
+				/* Loop through and list the comments. Tell wp_list_comments()
+				 * to use toat_comment() to format the comments.
+				 * If you want to overload this in a child theme then you can
+				 * define toat_comment() and that will be used instead.
+				 * See toat_comment() in inc/template-tags.php for more.
+				 */
+				wp_list_comments( array( 'callback' => 'toat_comment' ) );
 			?>
+		</ol><!-- .commentlist -->
 
-		</div><!-- .comments-inner -->
+		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
+		<nav role="navigation" id="comment-nav-below" class="site-navigation comment-navigation">
+			<h1 class="assistive-text"><?php _e( 'Comment navigation', 'toat' ); ?></h1>
+			<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'toat' ) ); ?></div>
+			<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'toat' ) ); ?></div>
+		</nav><!-- #comment-nav-below .site-navigation .comment-navigation -->
+		<?php endif; // check for comment navigation ?>
 
-	</div><!-- comments -->
+	<?php endif; // have_comments() ?>
 
 	<?php
-}
+		// If comments are closed and there are comments, let's leave a little note, shall we?
+		if ( ! comments_open() && '0' != get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) :
+	?>
+		<p class="nocomments"><?php _e( 'Comments are closed.', 'toat' ); ?></p>
+	<?php endif; ?>
 
-if ( comments_open() || pings_open() ) {
-
-	if ( $comments ) {
-		echo '<hr class="styled-separator is-style-wide" aria-hidden="true" />';
-	}
-
-	comment_form(
-		array(
-			'class_form'         => 'section-inner thin max-percentage',
-			'title_reply_before' => '<h2 id="reply-title" class="comment-reply-title">',
-			'title_reply_after'  => '</h2>',
-		)
-	);
-
-} elseif ( is_single() ) {
-
-	if ( $comments ) {
-		echo '<hr class="styled-separator is-style-wide" aria-hidden="true" />';
-	}
-
+	<?php 
+		
+		// customize the comment form a little bit 
+		
+		$args = array(
+			'comment_notes_before' => __( '' ),
+			'comment_notes_after'  => __( '<p class="do-not-disturb">Hinweis: Deine E-Mailadresse wird nicht veröffentlicht.</p>' ),
+			'title_reply'          => __( 'Dein Kommentar' ),
+			'title_reply_to'       => __( 'Antworte auf %s' ),
+			'cancel_reply_link'    => __( 'Antwort löschen' ),
+			'label_submit'         => __( 'Kommentar senden' ),
+		);
+		
+	
+		comment_form($args); 
+	
 	?>
 
-	<div class="comment-respond" id="respond">
-
-		<p class="comments-closed"><?php _e( 'Comments are closed.', 'twentytwenty' ); ?></p>
-
-	</div><!-- #respond -->
-
-	<?php
-}
+</div><!-- #comments .comments-area -->
