@@ -22,4 +22,15 @@
 
 	<body <?php body_class(); ?>>
 
-	<h1><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a></h1>
+		<?php if( get_field('remake2020_notice', 'options') ) : ?>
+			<div class="remake2020-notice">
+				<?php echo get_field('remake2020_notice', 'options'); ?>
+			</div>
+		<?php endif; // end if remake2020 notice ?>
+
+		<header class="site-header">
+			<h1>
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a>
+			</h1>
+
+		</header>

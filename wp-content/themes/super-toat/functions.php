@@ -30,6 +30,18 @@
   add_action( 'after_setup_theme', 'supertoat_menus' );
 
   /**
+   * Create ACF Options Page
+   */
+  if( function_exists('acf_add_options_page') ) {
+    $options = [
+      'page_title' => 'Telltec',
+      'position' => '30',
+      'icon_url' => 'dashicons-smiley'
+    ];
+    acf_add_options_page($options);
+  }
+
+  /**
    * Enable Theme Features
    */
   add_theme_support( 'post-thumbnails' ); // support featured Images on Posts
