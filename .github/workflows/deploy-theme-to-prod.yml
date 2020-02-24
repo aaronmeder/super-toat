@@ -11,15 +11,29 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - uses: actions/checkout@master
+        with:
+          fetch-depth: 2
+          
+      - name: Use Node.js 10.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 10.x
+  
+      - name: preparation
+        run: rm -rf ./*
+        working-directory: wp-content/themes/super-toat
       
-    - uses: actions/checkout@master
-      with:
-        fetch-depth: 2
+      - name: install npm dependencies
+        run:  npm install
+        
+      - name: build
+        run:  npm run build
 
-    - name: Deploy to FTP
-      uses: SamKirkland/FTP-Deploy-Action@3.0.0
-      with:
-        ftp-server: ${{ secrets.PROD_WP_FTP_SERVER }}
-        ftp-username: ${{ secrets.PROD_WP_FTP_USERNAME }}
-        ftp-password: ${{ secrets.PROD_WP_FTP_PASSWORD }}
-        local-dir: wp-content/themes
+      - name: Deploy to FTP
+        uses: SamKirkland/FTP-Deploy-Action@3.0.0
+        with:
+          ftp-server: ${{ secrets.PROD_WP_FTP_SERVER }}
+          ftp-username: ${{ secrets.PROD_WP_FTP_USERNAME }}
+          ftp-password: ${{ secrets.PROD_WP_FTP_PASSWORD }}
+          local-dir: wp-content/themes
