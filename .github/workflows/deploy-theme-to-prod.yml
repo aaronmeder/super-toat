@@ -24,6 +24,9 @@ jobs:
         run: rm -rf ./*
         working-directory: wp-content/themes/super-toat
 
+      - name: test0
+        run: ls -al .
+
       - name: test1
         run: ls -al wp-content/themes/super-toat/src
 
