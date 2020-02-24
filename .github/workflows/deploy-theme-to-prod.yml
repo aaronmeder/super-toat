@@ -30,7 +30,13 @@ jobs:
       - name: test0_1
         run: ls -al ./wp-content
 
-      - name: test1
+      - name: test0_2
+        run: ls -al ./wp-content/themes
+
+      - name: test0_3
+        run: ls -al ./wp-content/themes/super-toat/
+
+      - name: test0_4
         run: ls -al ./wp-content/themes/super-toat/src
 
       - name: test2
