@@ -6,7 +6,8 @@
   "scripts": {
     "watch": "parcel watch wp-content/themes/super-toat/src/parcel-entrypoint.js --out-file=site --out-dir=wp-content/themes/super-toat/dist --public-url ./",
     "build": "parcel build wp-content/themes/super-toat/src/parcel-entrypoint.js --out-file=site --out-dir=wp-content/themes/super-toat/dist --public-url ./",
-    "github-build": "parcel build ./wp-content/themes/super-toat/src/parcel-entrypoint.js --out-file=site --out-dir=./wp-content/themes/super-toat/dist --public-url ./"
+    "github-build": "parcel build ./wp-content/themes/super-toat/src/parcel-entrypoint.js --out-file=site --out-dir=./wp-content/themes/super-toat/dist --public-url ./",
+    "test3": "cat ./wp-content/themes/super-toat/src/parcel-entrypoint.js"
   },
   "repository": {
     "type": "git",
