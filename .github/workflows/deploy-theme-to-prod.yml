@@ -22,37 +22,13 @@ jobs:
   
       - name: preparation
         run: rm -rf ./*
-        working-directory: wp-content/themes/super-toat
-
-      - name: test0
-        run: ls -al .
-
-      - name: test0_1
-        run: ls -al ./wp-content
-
-      - name: test0_2
-        run: ls -al ./wp-content/themes
-
-      - name: test0_3
-        run: ls -al ./wp-content/themes/super-toat/
-
-      - name: test0_4
-        run: ls -al ./wp-content/themes/super-toat/src
-
-      - name: test2
-        run: cat ./wp-content/themes/super-toat/src/parcel-entrypoint.js
-
-      - name: test3
-        run: cat ./wp-content/themes/super-toat/src/parcel-entrypoint.js
-
-      - name: test4
-        run: npm run test4
+        working-directory: wp-content/themes/super-toat/src
       
-      - name: install npm dependencies
+      - name: Install npm dependencies
         run:  npm install
         
-      - name: build
-        run:  npm run github-build
+      - name: Build Parcel Bundle
+        run:  npm run build
 
       - name: Deploy to FTP
         uses: SamKirkland/FTP-Deploy-Action@3.0.0
