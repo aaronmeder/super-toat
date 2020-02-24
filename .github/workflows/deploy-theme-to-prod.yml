@@ -27,11 +27,14 @@ jobs:
       - name: test0
         run: ls -al .
 
+      - name: test0_1
+        run: ls -al ./wp-content
+
       - name: test1
-        run: ls -al wp-content/themes/super-toat/src
+        run: ls -al ./wp-content/themes/super-toat/src
 
       - name: test2
-        run: cat wp-content/themes/super-toat/src/parcel-entrypoint.js
+        run: cat ./wp-content/themes/super-toat/src/parcel-entrypoint.js
 
       - name: test3
         run: cat ./wp-content/themes/super-toat/src/parcel-entrypoint.js
