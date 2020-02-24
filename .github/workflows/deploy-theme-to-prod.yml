@@ -34,7 +34,7 @@ jobs:
         run: ls -al ./wp-content/themes/super-toat/src/
 
       - name: test1_3
-        run: cat ./wp-content/themes/super-toat/src/parcel-endpoint.js
+        run: cat ./wp-content/themes/super-toat/src/parcel-entrypoint.js
       
       - name: Install npm dependencies
         run:  npm install
