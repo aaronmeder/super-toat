@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "watch": "parcel watch wp-content/themes/super-toat/src/parcel-entrypoint.js --out-file=site --out-dir=wp-content/themes/super-toat/dist --public-url ./",
-    "build": "rm -r dist/* && parcel build wp-content/themes/super-toat/src/parcel-entrypoint.js --out-file=site --out-dir=wp-content/themes/super-toat/dist --public-url ./"
+    "build": "parcel build wp-content/themes/super-toat/src/parcel-entrypoint.js --out-file=site --out-dir=wp-content/themes/super-toat/dist --public-url ./"
   },
   "repository": {
     "type": "git",
