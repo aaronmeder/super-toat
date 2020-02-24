@@ -19,25 +19,13 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 10.x
-  
-      - name: preparation
-        run: rm -rf ./*
-        working-directory: wp-content/themes/super-toat/src
-
-      - name: test1
-        run: ls -al ./wp-content/themes/super-toat
-
-      - name: test1_1
-        run: ls -al wp-content/themes/super-toat
-
-      - name: test1_2
-        run: ls -al ./wp-content/themes/super-toat/src/
-
-      - name: test1_3
-        run: cat ./wp-content/themes/super-toat/src/parcel-entrypoint.js
       
       - name: Install npm dependencies
         run:  npm install
+        
+      - name: Prepare build
+        run: rm -rf ./*
+        working-directory: wp-content/themes/super-toat/dist
         
       - name: Build Parcel Bundle
         run:  npm run build
