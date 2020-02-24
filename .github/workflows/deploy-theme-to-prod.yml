@@ -23,4 +23,3 @@ jobs:
         ftp-username: ${{ secrets.PROD_WP_FTP_USERNAME }}
         ftp-password: ${{ secrets.PROD_WP_FTP_PASSWORD }}
         local-dir: wp-content/themes
-        
