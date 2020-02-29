@@ -5,8 +5,58 @@
 
 html {
   font-family: $primary-font;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 16px;
 }
 
 @supports (font-variation-settings: normal) {
   html { font-family: 'Inter var', sans-serif; }
+}
+
+body {
+  font-size: 1rem;
+  line-height: 1.6rem;
+}
+
+/* Basic Elements
+------------- */
+
+p {
+  margin: 0 0 $sizing-md 0;
+}
+
+h1 {
+  margin-top: $sizing-lg;
+  margin-bottom: $sizing-md;
+  font-size: 2.0rem;
+  line-height: calc(2.0rem*1.2);
+
+  @include medium {
+    font-size: 2.4rem;
+    line-height: calc(2.4rem*1.2);
+  }
+}
+
+h2 {
+  margin-top: $sizing-lg;
+  margin-bottom: $sizing-md;
+  font-size: 1.5rem;
+  line-height: calc(1.5rem*1.2);
+
+  @include medium {
+    font-size: 1.8rem;
+    line-height: calc(1.8rem*1.2);
+  }
+}
+
+h3 {
+  margin-top: $sizing-lg;
+  margin-bottom: $sizing-md;
+  font-size: 1.2rem;
+  line-height: calc(1.2rem*1.2);
+
+  @include medium {
+    font-size: 1.4rem;
+    line-height: calc(1.4rem*1.2);
+  }
 }
