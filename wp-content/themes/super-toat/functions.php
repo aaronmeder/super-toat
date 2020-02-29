@@ -7,7 +7,7 @@
   function supertoat_scripts() {
 
     // Theme styles
-    wp_enqueue_style( 'supertoat-styles', get_stylesheet_directory_uri() .'/dist/site.css' );
+    wp_enqueue_style( 'supertoat-styles', get_stylesheet_directory_uri() .'/dist/site.css', '', '2' );
 
     // Theme scripts
     wp_enqueue_script( 'supertoat-scripts', get_stylesheet_directory_uri() .'/dist/site.js', '', '', true );
