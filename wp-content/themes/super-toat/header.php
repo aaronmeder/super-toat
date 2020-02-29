@@ -22,7 +22,7 @@
 
 	<body <?php body_class(); ?>>
 
-		<?php if( is_dev_env() && acf_is_enabled() && get_field('remake2020_notice', 'options') ) : ?>
+		<?php if( !is_dev_env() && acf_is_enabled() && get_field('remake2020_notice', 'options') ) : ?>
 			
 			<div class="remake2020-notice container">
 				<?php echo get_field('remake2020_notice', 'options'); ?>

@@ -6,7 +6,7 @@
  */
 
 ?>
-			<footer id="site-footer" role="contentinfo" class="site-footer">
+			<footer id="site-footer" role="contentinfo" class="site-footer clear-float">
 
 				<div class="site-footer__inner container container--wide">
 

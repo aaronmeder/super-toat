@@ -2,4 +2,32 @@
 
 .pagination {
     text-align: center;
+    font-size: 2rem;
+    
+    a {
+        color: black;
+        text-decoration: none;
+    }
+
+    .nav-prev-text,
+    .nav-next-text {
+        display: none;
+    }
+
+    .page-numbers {
+        display: none;
+
+        &.prev,
+        &.next {
+            display: initial;
+        }
+
+        &.prev {
+            float: left;
+        }
+
+        &.next {
+            float: right;
+        }
+    }
 }

@@ -18,7 +18,7 @@ $next_text = sprintf(
 
 $posts_pagination = get_the_posts_pagination(
 	array(
-		'mid_size'  => 1,
+		'mid_size'  => 0,
 		'prev_text' => $prev_text,
 		'next_text' => $next_text,
 	)
@@ -41,6 +41,8 @@ if ( $posts_pagination ) { ?>
 		<hr class="posts__separator" aria-hidden="true" />
 
 		<?php echo $posts_pagination; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- already escaped during generation. ?>
+
+		<div class="clear-float"></div>
 
 	</div><!-- .pagination-wrapper -->
 

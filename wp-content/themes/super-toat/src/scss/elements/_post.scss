@@ -1,1 +1,19 @@
 /* --- Post ---------------------------- */
+
+.entry-content {
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    iframe,
+    div {
+        max-width: 100%;
+    }
+
+    a {
+        word-break: break-word;
+    }
+
+}

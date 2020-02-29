@@ -62,11 +62,14 @@ h3 {
 }
 
 
-pre {
+pre,
+code {
+  display: block;
   padding: $sizing-sm;
   max-width: 500px;
   border: 1px $grey--light solid;
   color: $grey--dark;
   font-family: $mono-font;
   white-space: pre-wrap;
+  word-break: break-all;
 }
