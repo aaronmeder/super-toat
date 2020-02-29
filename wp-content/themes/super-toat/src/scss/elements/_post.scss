@@ -16,4 +16,18 @@
         word-break: break-word;
     }
 
+    // button block
+    .wp-block-button {
+        margin: 0 0 $sizing-md 0;
+
+        &__link {
+            border-radius: $border-radius;
+        }
+    }
+
+}
+
+
+.post-edit-link {
+    color: $grey--medium;
 }

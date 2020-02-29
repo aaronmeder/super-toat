@@ -1,0 +1,63 @@
+/* --- Comment Form ---------------------------- */
+
+.comment-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+
+    // each row
+    & > p {
+        display: flex;
+        flex-direction: column;
+
+        @include medium {
+            flex-direction: row;
+        }
+    }
+
+    label {
+        padding-top: $sizing-sm;
+        width: 150px;
+        min-width: 150px;
+        font-weight: bold;
+    }
+
+    input, textarea {
+        max-width: 350px;
+        padding: $sizing-sm;
+        border: 2px black solid;
+        line-height: 1.6rem;
+        font-size: 1rem;
+        font-family: $primary-font;
+
+        &:focus {
+            background-color: $what-a-highlight;
+        }
+    }
+
+    textarea {
+        height: 150px;
+
+        @include medium {
+            max-width: 350px;
+        }
+    }
+
+    .form-submit {
+        margin-top: $sizing-md;
+    }
+
+    .do-not-disturb {
+        order: 10;
+        color: $grey--dark;
+    }
+}
+
+.akismet_comment_form_privacy_notice {
+    max-width: 500px;
+    color: $grey--dark;
+
+    a {
+        color: $grey--dark;
+    }
+}

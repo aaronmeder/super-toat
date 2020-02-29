@@ -17,12 +17,12 @@
 		return;
 ?>
 
-	<div id="comments" class="comments-area">
+	<div id="comments" class="comments comments-area">
 
 	<?php // You can start editing here -- including this comment! ?>
 
 	<?php if ( have_comments() ) : ?>
-		<h2 class="comments-title">
+		<h2 class="comments__title">
 			<?php
 				printf( _n( 'Ein Kommentar', '%1$s Kommentare', get_comments_number(), 'toat' ),
 					number_format_i18n( get_comments_number() ), '<span>' . get_the_title() . '</span>' );

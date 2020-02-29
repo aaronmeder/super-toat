@@ -3,13 +3,13 @@
   Basics
 ------------------------------------------------ */
 
-
 @import "basics/imports";
 @import "basics/variables";
 @import "basics/layout";
 @import "basics/typography";
 @import "basics/links";
 @import "basics/helpers";
+
 
 /* ------------------------------------------------
   Layout Sections
@@ -19,6 +19,7 @@
 @import "sections/content";
 @import "sections/footer";
 @import "sections/nav";
+
 
 /* ------------------------------------------------
   Specific pages
@@ -33,5 +34,7 @@
 
 @import "elements/pagination";
 @import "elements/posts";
-@import "elements/post"
+@import "elements/post";
+@import "elements/comment-form";
+@import "elements/buttons";
 

@@ -1,0 +1,10 @@
+/* --- Buttons ---------------------------- */
+
+.button,
+.btn,
+.comment-respond .form-submit input {
+    padding: $sizing-sm $sizing-md;
+    border-radius: $border-radius;
+    color: white;
+    background-color: black;
+}
