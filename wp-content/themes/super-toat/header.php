@@ -25,7 +25,6 @@
 		<?php if( !is_dev_env() && acf_is_enabled() && get_field('remake2020_notice', 'options') ) : ?>
 			<div class="remake2020-notice">
 				<?php echo get_field('remake2020_notice', 'options'); ?>
-				<div class="remake2020-notice__status"><strong>Aktueller Stand:</strong> ~ 2 / 100</div>
 			</div>
 		<?php endif; // end if remake2020 notice ?>
 
