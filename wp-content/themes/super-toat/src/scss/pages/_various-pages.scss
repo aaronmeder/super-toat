@@ -1,0 +1,19 @@
+/* --- Various Single Pages ---------------------------- */
+
+/* Remake 2020
+------------- */
+
+.page-remake-2020 {
+ 
+    .entry__content h3 em {
+        margin-left: 0.5rem;
+        padding: $sizing-sm;
+        border-radius: $border-radius;
+        font-size: 1rem;
+        font-weight: 400;
+        font-style: normal;
+        color: $grey--medium;
+        background-color: $grey--verylight;
+    }
+
+}
