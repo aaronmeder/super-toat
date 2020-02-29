@@ -3,14 +3,17 @@
 // Remake 2020 Notice
 .remake2020-notice {
     padding: $sizing-md;
-    background-color: $what-a-highlight;
+    border: 2px $what-a-highlight solid;
+    border-radius: 10px;
+    color: $grey--dark;
+    background-color: #FFFFF0;
 
     p {
         margin: 0;
     }
 
     a {
-        color: black;
+        color: $grey--dark;
     }
 
     &__status {
