@@ -1,0 +1,75 @@
+/* --- Comments List ---------------------------- */
+
+.comments-wrapper {
+    
+    ol.commentlist {
+        display: flex;
+        flex-direction: column;
+        margin-left: 0;
+        padding-left: 0;
+        list-style-type: none;
+    }
+
+    // second level
+    ul.children {
+        list-style-type: none;
+        margin-top: $sizing-md;
+        margin-left: $sizing-xl;    
+        padding-left: 0;
+    }
+
+    // each comment item 
+    li.comment {
+        margin-bottom: $sizing-lg;
+    }
+
+    // each comment itself
+    article.comment {
+        display: flex;
+
+        .comment-author {
+            padding-top: 7px;
+            img {
+                border-radius: 50%;
+            }
+        }
+
+        .comment-secondary {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            padding-left: $sizing-md;
+        }
+
+        // Comment Author Name and date
+        .comment-meta {
+            order: 2;
+            color: $grey--medium;
+            font-size: 0.9rem;
+
+            // Name
+            cite {
+                font-style: normal;
+                font-weight: bold;
+            }
+
+            // Links
+            a {
+                color: $grey--medium;
+            }
+        }
+
+        .comment-content {
+            font-size: 0.9rem;
+            margin-bottom: $sizing-sm;
+
+            p {
+                margin-bottom: 0;
+            }
+
+            a {
+                color: black;
+            }
+        }
+    } 
+}
