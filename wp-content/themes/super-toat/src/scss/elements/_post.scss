@@ -1,5 +1,17 @@
 /* --- Post ---------------------------- */
 
+.entry-categories {
+    margin-bottom: $sizing-lg;
+
+    a {
+        padding: $sizing-sm;
+        border-radius: $border-radius;
+        color: $grey--medium;
+        text-decoration: none;
+        background-color: $grey--verylight;
+    }
+}
+
 .entry-content {
 
     img {
@@ -14,15 +26,6 @@
 
     a {
         word-break: break-word;
-    }
-
-    // button block
-    .wp-block-button {
-        margin: 0 0 $sizing-md 0;
-
-        &__link {
-            border-radius: $border-radius;
-        }
     }
 
 }

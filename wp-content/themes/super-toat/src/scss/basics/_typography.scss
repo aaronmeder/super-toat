@@ -68,6 +68,7 @@ code {
   padding: $sizing-sm;
   max-width: 500px;
   border: 1px $grey--light solid;
+  border-radius: $border-radius;
   color: $grey--dark;
   font-family: $mono-font;
   white-space: pre-wrap;

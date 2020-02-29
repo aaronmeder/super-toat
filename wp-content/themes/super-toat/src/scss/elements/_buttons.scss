@@ -2,7 +2,9 @@
 
 .button,
 .btn,
-.comment-respond .form-submit input {
+.comment-respond .form-submit input,
+.wp-block-button__link {
+    margin: 0 0 $sizing-md 0;
     padding: $sizing-sm $sizing-md;
     border-radius: $border-radius;
     color: white;
