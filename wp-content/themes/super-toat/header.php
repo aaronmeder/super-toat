@@ -22,7 +22,7 @@
 
 	<body <?php body_class(); ?>>
 
-		<?php if( get_field('remake2020_notice', 'options') ) : ?>
+		<?php if( !is_dev_env() && acf_is_enabled() && get_field('remake2020_notice', 'options') ) : ?>
 			<div class="remake2020-notice">
 				<?php echo get_field('remake2020_notice', 'options'); ?>
 				<div class="remake2020-notice__status"><strong>Aktueller Stand:</strong> ~ 2 / 100</div>
@@ -30,7 +30,7 @@
 		<?php endif; // end if remake2020 notice ?>
 
 		<header id="site-header" class="site-header">
-			<div class="site-header__inner container--wide">
+			<div class="site-header__inner container container--wide">
 				<h1>
 					<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a>
 				</h1>

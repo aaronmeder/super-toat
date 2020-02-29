@@ -8,7 +8,7 @@
 ?>
 			<footer id="site-footer" role="contentinfo" class="site-footer">
 
-				<div class="site-footer__inner container--wide">
+				<div class="site-footer__inner container container--wide">
 
 					<div class="footer__credits">
 

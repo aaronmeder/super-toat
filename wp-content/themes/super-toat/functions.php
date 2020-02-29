@@ -51,9 +51,10 @@
   // add_editor_style( 'dist/site.css' ); // Load our main CSS into Gutenberg
 
   /**
-   * Custom template tags for this theme.
+   * Load custom functioncs 
    */
   require get_template_directory() . '/src/php/template-tags.php';
+  require get_template_directory() . '/src/php/helpers.php';
 
 
   /**

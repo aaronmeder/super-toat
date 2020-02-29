@@ -38,7 +38,7 @@ if ( $posts_pagination ) { ?>
 
 	<div class="pagination container">
 
-		<hr class="styled-separator pagination-separator is-style-wide" aria-hidden="true" />
+		<hr class="posts__separator" aria-hidden="true" />
 
 		<?php echo $posts_pagination; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- already escaped during generation. ?>
 
