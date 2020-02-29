@@ -1,6 +1,9 @@
 /* --- Footer ---------------------------- */
 
 .site-footer {
+    margin: $sizing-xl 0 $sizing-lg 0;
+    margin-top: $sizing-xl;
+    text-align: center;
 
     a {
         color: black;
