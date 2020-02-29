@@ -29,9 +29,10 @@
 			</div>
 		<?php endif; // end if remake2020 notice ?>
 
-		<header class="site-header">
-			<h1>
-				<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a>
-			</h1>
-
+		<header id="site-header" class="site-header">
+			<div class="site-header__inner container--wide">
+				<h1>
+					<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a>
+				</h1>
+			</div> <!-- end site header inner -->
 		</header>

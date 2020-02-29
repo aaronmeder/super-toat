@@ -7,6 +7,9 @@ $very-light-grey: #f1f2f1;
 
 $what-a-highlight: #fff8db;
 
+$funky-fresh: hsl(208, 100%, 43%);
+$funky-fresh--light: hsl(208, 100%, 63%);
+
 
 /* Fonts
 ------------- */
@@ -23,30 +26,52 @@ $sizing-md:    5 * $sizing-xs;
 $sizing-lg:   10 * $sizing-xs;
 $sizing-xl:   20 * $sizing-xs;
 
+$container-width: 850px;
+$container-width--wide: 1050px;
 
-/* Breakpoints
+
+/* Sizes & Breakpoints
 ------------- */
 
-@mixin sm {
+$size-md: 768px;
+$size-lg: 991px;
+$size-xl: 1200px;
+$size-xxl: 1500px;
+
+@mixin small {
   @media (min-width: 0) {
     @content;
   }
 }
 
-@mixin md {
-  @media (min-width: #{$size-sm}) {
+@mixin medium {
+  @media (min-width: #{$size-md + 1px}) {
     @content;
   }
 }
 
-@mixin lg {
-  @media (min-width: #{$size-lg}) {
+@mixin large {
+  @media (min-width: #{$size-lg + 1px}) {
     @content;
   }
 }
 
-@mixin xl {
-  @media (min-width: #{$size-xl}) {
+@mixin xlarge {
+  @media (min-width: #{$size-xl + 1px}) {
+    @content;
+  }
+}
+
+@mixin xxlarge {
+  @media (min-width: #{$size-xxl + 1px}) {
+    @content;
+  }
+}
+
+// until
+
+@mixin until--medium {
+  @media (max-width: #{$size-md}) {
     @content;
   }
 }

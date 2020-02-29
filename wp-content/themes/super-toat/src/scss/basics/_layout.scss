@@ -1,0 +1,11 @@
+/* --- Layout ---------------------------- */
+
+.container {
+    margin: 0 auto;
+    padding: 0 $sizing-md;
+    max-width: $container-width;
+
+    &--wide {
+       max-width: $container-width--wide; 
+    }
+}

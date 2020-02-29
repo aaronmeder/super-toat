@@ -36,7 +36,7 @@ if ( strpos( $posts_pagination, 'next page-numbers' ) === false ) {
 
 if ( $posts_pagination ) { ?>
 
-	<div class="pagination-wrapper section-inner">
+	<div class="pagination container">
 
 		<hr class="styled-separator pagination-separator is-style-wide" aria-hidden="true" />
 

@@ -6,8 +6,13 @@
 // General Styling
 
 a {
-    color: #0074D9;
+    color: $funky-fresh;
     text-decoration-thickness: 2px;
+    transition: opacity 200ms ease-in;
+
+    &:hover {
+        opacity: 0.6;
+    }
 }
 
 h1,

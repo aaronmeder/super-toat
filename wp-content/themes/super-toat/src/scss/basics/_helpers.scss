@@ -1,0 +1,37 @@
+/* --- Helpers & Utilitie Classes ---------------------------- */
+
+// Toggle visibility
+
+.visible {
+  display: initial;
+
+  &--sm {
+    @include small {
+      display: initial;
+    }
+  }
+
+  &--md {
+    @include medium {
+      display: initial;
+    }
+  }
+
+}
+
+.invisible {
+  display: none;
+
+  &--md {
+    @include medium {
+      display: none;
+    }
+  }
+
+  &--until-md {
+    @include until--medium {
+      display: none;
+    }
+  }
+
+}

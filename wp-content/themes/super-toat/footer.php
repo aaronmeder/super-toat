@@ -6,38 +6,24 @@
  */
 
 ?>
-			<footer id="site-footer" role="contentinfo" class="header-footer-group">
+			<footer id="site-footer" role="contentinfo" class="site-footer">
 
-				<div class="section-inner">
+				<div class="site-footer__inner container--wide">
 
-					<div class="footer-credits">
+					<div class="footer__credits">
 
-						<p class="footer-copyright">&copy;
-							<?php
-							echo date_i18n(
-								/* translators: Copyright date format, see https://secure.php.net/date */
-								_x( 'Y', 'copyright date format', 'supertoat' )
-							);
-							?>
-							<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a>
-						</p><!-- .footer-copyright -->
+						<?php _e( 'Built with ❤️ by Aaron', 'supertoat' ); ?>
 
-						<p class="powered-by-wordpress">
-							<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'supertoat' ) ); ?>">
-								<?php _e( 'Powered by WordPress', 'supertoat' ); ?>
-							</a>
-						</p><!-- .powered-by-wordpress -->
+					</div><!-- end footer credits -->
 
-					</div><!-- .footer-credits -->
-
-					<a class="to-the-top" href="#site-header">
-						<span class="to-the-top-long">
+					<a class="to-the-top" href="#top">
+						<span class="to-the-top-long invisible--until-md visible--md">
 							<?php
 							/* translators: %s: HTML character for up arrow */
 							printf( __( 'To the top %s', 'supertoat' ), '<span class="arrow" aria-hidden="true">&uarr;</span>' );
 							?>
 						</span><!-- .to-the-top-long -->
-						<span class="to-the-top-short">
+						<span class="to-the-top-short visible invisible--md">
 							<?php
 							/* translators: %s: HTML character for up arrow */
 							printf( __( 'Up %s', 'supertoat' ), '<span class="arrow" aria-hidden="true">&uarr;</span>' );
@@ -45,9 +31,9 @@
 						</span><!-- .to-the-top-short -->
 					</a><!-- .to-the-top -->
 
-				</div><!-- .section-inner -->
+				</div><!-- end site-footer inner -->
 
-			</footer><!-- #site-footer -->
+			</footer><!-- end site-footer -->
 
 		<?php wp_footer(); ?>
 
