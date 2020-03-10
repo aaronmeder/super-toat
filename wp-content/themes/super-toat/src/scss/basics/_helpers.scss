@@ -58,3 +58,28 @@
 .clear-float {
   clear: both;
 }
+
+
+// Appear
+
+.appear {
+  opacity: 1;
+  transform: none;
+  transition-property: opacity, transform;
+  transition-duration: 800ms;
+  transition-timing-function: ease;
+  transition-delay: 100ms;
+
+  &+& { transition-delay: 200ms; }
+  &+&+& { transition-delay: 300ms; }
+  &+&+&+& { transition-delay: 400ms; }
+  &+&+&+&+& { transition-delay: 500ms; }
+  &+&+&+&+&+& { transition-delay: 600ms; }
+  &+&+&+&+&+&+& { transition-delay: 700ms; }
+
+}
+
+.appear:not(.in-viewport) {
+    opacity: 0;
+    transform: translateY(50px);
+}

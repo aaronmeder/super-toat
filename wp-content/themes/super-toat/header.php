@@ -39,6 +39,35 @@
 
 	<body <?php body_class(); ?>>
 
+		<!-- site nav toggle -->
+		<button
+			id="site-nav__toggle"
+			class="site-nav__toggle hamburger hamburger--minus"
+			type="button"
+			aria-label="Menu"
+			aria-controls="site-nav"
+		>
+			<span class="hamburger-label">menu</span>
+			<span class="hamburger-box">
+				<span class="hamburger-inner"></span>
+			</span>
+		</button>
+
+		<!-- site nav -->
+		<nav id="site-nav" class="site-nav site-nav--hidden">
+			<?php
+				// display the primary site nav
+				wp_nav_menu(
+					array(
+						'menu' => 'primary_menu',
+						'menu_class' => 'site-nav__menu',
+						'link_before' => '<span class="i-v appear">',
+						'link_after' => '</span>',
+					)
+				);
+			?>
+		</nav>
+
 		<?php if( !is_dev_env() && acf_is_enabled() && get_field('remake2020_notice', 'options') ) : ?>
 			
 			<div class="remake2020-notice container">
@@ -47,10 +76,12 @@
 			
 		<?php endif; // end if remake2020 notice ?>
 
-		<header id="site-header" class="site-header">
+		<header id="site-header" class="site-header i-v appear">
 			<div class="site-header__inner container container--wide">
+				
 				<h1>
 					<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a>
 				</h1>
+				
 			</div> <!-- end site header inner -->
 		</header>

@@ -3,4 +3,13 @@
 .site-header {
     margin-bottom: $sizing-xl;
     text-align: center;
+
+    h1 {
+        margin-top: $sizing-md;
+        text-align: left;
+        
+        @include medium {
+            text-align: center;
+        }
+    }
 }

@@ -50,6 +50,7 @@
   add_theme_support('editor-styles'); 
   // add_editor_style( 'dist/site.css' ); // Load our main CSS into Gutenberg
 
+
   /**
    * Load custom functioncs 
    */
@@ -68,6 +69,17 @@
     return $classes;
   }
   add_filter('body_class', 'supertoat_add_page_slug_body_class' );
+
+
+  /**
+  * Add telltec to body class
+  * Used to increase specificity when needed
+  */
+
+  
+  add_filter( 'body_class', function( $classes ) {
+    return array_merge( $classes, array( 'telltec' ) );
+  } );
 
   /**
    * Allow SVG uploads

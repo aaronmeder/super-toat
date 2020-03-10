@@ -26,5 +26,9 @@
   },
   "watchreload": {
     "files": "**/*.php"
+  },
+  "dependencies": {
+    "hamburgers": "^1.1.3",
+    "in-viewport-class": "^0.1.4"
   }
 }
