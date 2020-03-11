@@ -10,11 +10,16 @@ body {
 
 // Remake 2020 Notice
 .remake2020-notice {
+    margin-bottom: $sizing-md;
+    width: 350px;
+    max-width: 90vw;
     padding: $sizing-md;
     border: 2px $what-a-highlight solid;
     border-radius: $border-radius;
     color: $grey--dark;
     background-color: #FFFFF0;
+    z-index: 1;
+    overflow: hidden;
 
     p {
         margin: 0;

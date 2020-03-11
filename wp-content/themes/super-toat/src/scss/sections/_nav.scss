@@ -37,6 +37,7 @@
     }
 
     &--hidden { 
+        width: 0;
         opacity: 0;
         transform: translateX(100vw);
     }

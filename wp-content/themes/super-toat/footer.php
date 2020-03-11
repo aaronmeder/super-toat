@@ -8,6 +8,14 @@
 ?>
 			<footer id="site-footer" role="contentinfo" class="site-footer clear-float">
 
+				<?php if( is_dev_env() && acf_is_enabled() && get_field('remake2020_notice', 'options') ) : ?>
+				
+					<div class="remake2020-notice container">
+						<?php echo get_field('remake2020_notice', 'options'); ?>
+					</div>
+				
+				<?php endif; // end if remake2020 notice ?>
+
 				<div class="site-footer__inner container container--wide">
 
 					<div class="footer__credits">
