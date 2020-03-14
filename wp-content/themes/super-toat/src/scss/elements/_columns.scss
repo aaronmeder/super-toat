@@ -1,0 +1,11 @@
+/* --- Columns ---------------------------- */
+
+.wp-block-columns {
+    display: flex;
+    margin: $sizing-md 0;
+}
+
+.wp-block-column {
+    flex: 1;
+    margin: 0 $sizing-md;
+}

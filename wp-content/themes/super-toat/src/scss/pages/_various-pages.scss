@@ -17,3 +17,31 @@
     }
 
 }
+
+/* Things I use
+------------- */
+
+.page-uses {
+
+    .entry__content {
+
+        em {
+            font-style: normal;
+            color: $grey--dark;
+
+            &:before {
+                content: "💭";
+                margin-right: $sizing-xs;
+            }
+
+            a {
+                color: $grey--dark;
+                text-decoration-thickness: 1px;
+                text-decoration-color: $grey--light;
+            }
+
+        }
+
+    }
+
+}
