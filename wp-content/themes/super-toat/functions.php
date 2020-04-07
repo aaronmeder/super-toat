@@ -141,9 +141,9 @@
 
 
 
-  /**
- * Disable the emoji's
- */
+ /**
+  * Disable the emoji's
+  */
 function disable_emojis() {
   remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
   remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
@@ -163,13 +163,13 @@ function disable_emojis() {
   * @param array $plugins 
   * @return array Difference betwen the two arrays
   */
- function disable_emojis_tinymce( $plugins ) {
-  if ( is_array( $plugins ) ) {
-  return array_diff( $plugins, array( 'wpemoji' ) );
-  } else {
-  return array();
+  function disable_emojis_tinymce( $plugins ) {
+    if ( is_array( $plugins ) ) {
+      return array_diff( $plugins, array( 'wpemoji' ) );
+    } else {
+      return array();
+    }
   }
- }
  
  /**
   * Remove emoji CDN hostname from DNS prefetching hints.
@@ -179,12 +179,74 @@ function disable_emojis() {
   * @return array Difference betwen the two arrays.
   */
  function disable_emojis_remove_dns_prefetch( $urls, $relation_type ) {
-  if ( 'dns-prefetch' == $relation_type ) {
-  /** This filter is documented in wp-includes/formatting.php */
-  $emoji_svg_url = apply_filters( 'emoji_svg_url', 'https://s.w.org/images/core/emoji/2/svg/' );
- 
- $urls = array_diff( $urls, array( $emoji_svg_url ) );
-  }
- 
- return $urls;
+    if ( 'dns-prefetch' == $relation_type ) {
+      /** This filter is documented in wp-includes/formatting.php */
+      $emoji_svg_url = apply_filters( 'emoji_svg_url', 'https://s.w.org/images/core/emoji/2/svg/' );
+    
+      $urls = array_diff( $urls, array( $emoji_svg_url ) );
+    }
+  
+    return $urls;
  }
+
+
+/**
+* Register Activites Custom Post Type
+*/
+function telltec_activities_cpt() {
+
+	$labels = array(
+		'name'                  => _x( 'Activities', 'Post Type General Name', 'supertoat' ),
+		'singular_name'         => _x( 'Activity', 'Post Type Singular Name', 'supertoat' ),
+		'menu_name'             => __( 'Activities', 'supertoat' ),
+		'name_admin_bar'        => __( 'Activity', 'supertoat' ),
+		'archives'              => __( 'Activity Archives', 'supertoat' ),
+		'attributes'            => __( 'Activity Attributes', 'supertoat' ),
+		'parent_item_colon'     => __( 'Parent Activity:', 'supertoat' ),
+		'all_items'             => __( 'All Activities', 'supertoat' ),
+		'add_new_item'          => __( 'Add New Activity', 'supertoat' ),
+		'add_new'               => __( 'Add New', 'supertoat' ),
+		'new_item'              => __( 'New Activity', 'supertoat' ),
+		'edit_item'             => __( 'Edit Activity', 'supertoat' ),
+		'update_item'           => __( 'Update Activity', 'supertoat' ),
+		'view_item'             => __( 'View Activity', 'supertoat' ),
+		'view_items'            => __( 'View Activities', 'supertoat' ),
+		'search_items'          => __( 'Search Activity', 'supertoat' ),
+		'not_found'             => __( 'Not found', 'supertoat' ),
+		'not_found_in_trash'    => __( 'Not found in Trash', 'supertoat' ),
+		'featured_image'        => __( 'Featured Image', 'supertoat' ),
+		'set_featured_image'    => __( 'Set featured image', 'supertoat' ),
+		'remove_featured_image' => __( 'Remove featured image', 'supertoat' ),
+		'use_featured_image'    => __( 'Use as featured image', 'supertoat' ),
+		'insert_into_item'      => __( 'Insert into item', 'supertoat' ),
+		'uploaded_to_this_item' => __( 'Uploaded to this activity', 'supertoat' ),
+		'items_list'            => __( 'Activity list', 'supertoat' ),
+		'items_list_navigation' => __( 'Activity list navigation', 'supertoat' ),
+		'filter_items_list'     => __( 'Filter activity list', 'supertoat' ),
+	);
+	$args = array(
+		'label'                 => __( 'Activity', 'supertoat' ),
+		'description'           => __( 'Collection of various activities', 'supertoat' ),
+		'labels'                => $labels,
+		'supports'              => array( 'title', 'revisions' ),
+		'taxonomies'            => array( 'category', 'post_tag' ),
+		'hierarchical'          => false,
+		'public'                => true,
+		'show_ui'               => true,
+		'show_in_menu'          => true,
+		'menu_position'         => 20,
+		'menu_icon'             => 'dashicons-buddicons-groups',
+		'show_in_admin_bar'     => true,
+		'show_in_nav_menus'     => true,
+		'can_export'            => true,
+		'has_archive'           => true,
+		'exclude_from_search'   => false,
+		'publicly_queryable'    => true,
+		'capability_type'       => 'post',
+		'show_in_rest'          => true,
+		'rest_base'             => 'activities',
+	);
+	register_post_type( 'superactivities', $args );
+
+}
+add_action( 'init', 'telltec_activities_cpt', 0 );
