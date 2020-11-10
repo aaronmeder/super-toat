@@ -22,7 +22,7 @@
     "parcel-bundler": "^1.12.4",
     "parcel-plugin-watch-reload": "0.0.2",
     "postcss-modules": "^1.5.0",
-    "sass": "^1.25.0"
+    "sass": "^1.29.0"
   },
   "watchreload": {
     "files": "**/*.php"
