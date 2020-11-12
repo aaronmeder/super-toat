@@ -8,23 +8,22 @@
     height: 100vh;
     overflow: hidden;
     z-index: 1;
-    transform: translateX(0);
-    transition: opacity 300ms ease;
     background-color: white;
     opacity: 1;
+    transition: opacity 600ms ease-out;
+    transform: translate(0, 0);
 
     &__toggle {
         position: absolute;
         top: 1.9rem;
         right: $sizing-md;
+        z-index: 3;
 
         @include medium {
             top: 2.2rem;
             right: $sizing-md;
         }
         
-        z-index: 2;
-
         .telltec & {
             display: flex;
             padding: 0;
@@ -39,22 +38,71 @@
     &--hidden { 
         width: 0;
         opacity: 0;
-        transform: translateX(100vw);
+        transform: translate(0, -100vw);
+        li {
+            animation: 1s slideOut;
+            opacity: 0;
+        }
+    }
+
+    &--show {
+        li {
+            animation: 1s slideIn forwards;
+            opacity: 1;
+        }
     }
 
     &__menu {
-        margin-top: $sizing-xl;
+        position: absolute;
+        top: $sizing-xl;
+        right: $sizing-md;
         text-align: right;
         list-style-type: none;
         font-size: 2rem;
         font-weight: bold;
-        line-height: calc(2rem*1.3);
+        z-index: 3;
+
+        li {
+            opacity: 0;
+        }
 
         a {
-            padding: $sizing-md;
+            display: block;
+            padding: $sizing-sm;
             color: black;
             text-decoration: none;
         }
+    }
+
+}
+
+
+
+@keyframes slideIn {
+
+    from {
+        transform: translate(-25%,0);
+        opacity: 0
+    }
+    
+    to {
+        transform: translate(0,0);
+        opacity: 1
+        
+    }
+
+}
+
+@keyframes slideOut {
+
+    from {
+        transform: translate(0,0);
+        opacity: 1
+    }
+    
+    to {
+        transform: translate(-25%,0);
+        opacity: 0
     }
 
 }

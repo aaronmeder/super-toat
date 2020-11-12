@@ -61,17 +61,17 @@
 					array(
 						'menu' => 'primary_menu',
 						'menu_class' => 'site-nav__menu',
-						'link_before' => '<span class="i-v appear">',
-						'link_after' => '</span>',
+						/* 'link_before' => '<span class="i-v appear">',
+						'link_after' => '</span>', */
 					)
 				);
 			?>
 		</nav>
 
-		<header id="site-header" class="site-header i-v appear">
+		<header id="site-header" class="site-header">
 			<div class="site-header__inner container container--wide">
 				
-				<h1>
+				<h1 class="site-header__title">
 					<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a>
 				</h1>
 				

@@ -4,12 +4,48 @@
     margin-bottom: $sizing-xl;
     text-align: center;
 
-    h1 {
+    &__title {
+        position: relative;
         margin-top: $sizing-md;
         text-align: left;
+        z-index: 2;
+        animation: slideInTitle 350ms forwards;
         
         @include medium {
             text-align: center;
         }
+    }
+
+}
+
+@keyframes slideInTitle {
+
+    from {
+        transform: translate(-25%, 0);
+        opacity: 0;
+        
+    }
+    
+    to {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+
+}
+
+@include medium {
+    @keyframes slideInTitle {
+
+        from {
+            transform: translate(0, -50%);
+            opacity: 0;
+            
+        }
+        
+        to {
+            transform: translate(0, 0);
+            opacity: 1;
+        }
+    
     }
 }

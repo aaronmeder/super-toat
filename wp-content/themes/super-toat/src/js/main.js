@@ -4,30 +4,18 @@
   Hi there!
 ------------------------------------------------ */
 
-console.log("Gotta lova a good 🍪!");
-
-
-/* --------
-Import Third Party
--------- */
-import '../../../../../node_modules/in-viewport-class/dist/in-viewport-class.js'
-
+console.log("Welcome my friend! 👋🏻 Nice to see you here.");
 
 /* --------
-Site Nav 
+Modules
 -------- */
 
-const siteNavToggle = document.querySelector('#site-nav__toggle');
-const siteNav   = document.querySelector('#site-nav');
+import './nav';
 
-siteNavToggle.addEventListener( 'click', toggleNav );
-
-function toggleNav() {
-
-  siteNav.classList.toggle('site-nav--hidden');
-  siteNavToggle.classList.toggle('is-active');
-
-}
+/* --------
+Third Party
+-------- */
+//import '../../../../../node_modules/in-viewport-class/dist/in-viewport-class.js'
 
 
 
