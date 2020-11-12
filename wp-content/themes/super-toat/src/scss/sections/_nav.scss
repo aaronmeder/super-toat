@@ -1,82 +1,129 @@
 /* --- Nav ---------------------------- */
 
-.site-nav {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
-    z-index: 1;
-    background-color: white;
-    opacity: 1;
-    transition: opacity 600ms ease-out;
-    transform: translate(0, 0);
+/* Mobile Nav
+------------- */
 
-    &__toggle {
+@include until--medium {
+
+    .site-nav {
         position: absolute;
-        top: 1.9rem;
-        right: $sizing-md;
-        z-index: 3;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+        z-index: 1;
+        opacity: 1;
+        background-color: hotpink;
+        transition: transform 200ms ease-out, opacity 100ms ease-out;
+        transform: translate(0, 0);
 
-        @include medium {
-            top: 2.2rem;
-            right: $sizing-md;
-        }
-        
-        .telltec & {
+        &__toggle.hamburger {
             display: flex;
+            position: absolute;
+            top: 1.9rem;
+            right: $sizing-md;
             padding: 0;
+            z-index: 3;
+
+            @include medium {
+                display: none;
+                top: 2.2rem;
+                right: $sizing-md;
+                
+            }
+
+            .hamburger-label {
+                font-weight: bold;
+                margin-right: $sizing-sm;
+            }
         }
 
-        .hamburger-label {
+        &--hidden { 
+            width: 0;
+            opacity: 0;
+            transform: translate(100vw, -100vw);
+            li {
+                animation: 1s slideOut;
+                opacity: 0;
+            }
+        }
+
+        &--show {
+            li {
+                animation: 0.8s slideIn forwards;
+                opacity: 1;
+            }
+        }
+
+        &__menu {
+            position: absolute;
+            top: $sizing-xl;
+            right: $sizing-md;
+            text-align: right;
+            list-style-type: none;
+            font-size: 2rem;
             font-weight: bold;
-            margin-right: $sizing-sm;
-        }
-    }
+            z-index: 3;
 
-    &--hidden { 
-        width: 0;
-        opacity: 0;
-        transform: translate(0, -100vw);
-        li {
-            animation: 1s slideOut;
-            opacity: 0;
-        }
-    }
+            li {
+                opacity: 0;
+            }
 
-    &--show {
-        li {
-            animation: 1s slideIn forwards;
-            opacity: 1;
-        }
-    }
-
-    &__menu {
-        position: absolute;
-        top: $sizing-xl;
-        right: $sizing-md;
-        text-align: right;
-        list-style-type: none;
-        font-size: 2rem;
-        font-weight: bold;
-        z-index: 3;
-
-        li {
-            opacity: 0;
+            a {
+                display: block;
+                padding: $sizing-sm;
+                color: black;
+                text-decoration: none;
+            }
         }
 
-        a {
-            display: block;
-            padding: $sizing-sm;
-            color: black;
-            text-decoration: none;
-        }
     }
 
 }
 
 
+/* Desktop Nav
+------------- */
+
+@include medium {
+
+    .site-nav {
+        flex: 1;
+        text-align: right;
+
+        &__toggle.hamburger {
+            display: none;
+        }
+
+        &__menu {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+
+            li {
+                display: inline;
+
+                &:last-child a {
+                    padding-right: 0;
+                }
+            }
+
+            a {
+                padding: 0 0.5rem;
+                text-decoration: none;
+                color: black;
+                font-size: 1.2rem;
+                font-weight: 500;
+            }
+        }
+
+    }
+
+}
+
+/* Animations
+------------- */
 
 @keyframes slideIn {
 

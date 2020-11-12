@@ -42,7 +42,7 @@
 		<!-- site nav toggle -->
 		<button
 			id="site-nav__toggle"
-			class="site-nav__toggle hamburger hamburger--minus"
+			class="site-nav__toggle hamburger hamburger--elastic"
 			type="button"
 			aria-label="Menu"
 			aria-controls="site-nav"
@@ -53,20 +53,7 @@
 			</span>
 		</button>
 
-		<!-- site nav -->
-		<nav id="site-nav" class="site-nav site-nav--hidden">
-			<?php
-				// display the primary site nav
-				wp_nav_menu(
-					array(
-						'menu' => 'primary_menu',
-						'menu_class' => 'site-nav__menu',
-						/* 'link_before' => '<span class="i-v appear">',
-						'link_after' => '</span>', */
-					)
-				);
-			?>
-		</nav>
+		
 
 		<header id="site-header" class="site-header">
 			<div class="site-header__inner container container--wide">
@@ -74,6 +61,21 @@
 				<h1 class="site-header__title">
 					<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a>
 				</h1>
+
+				<!-- site nav -->
+				<nav id="site-nav" class="site-nav site-nav--hidden">
+					<?php
+						// display the primary site nav
+						wp_nav_menu(
+							array(
+								'menu' => 'primary_menu',
+								'menu_class' => 'site-nav__menu',
+								/* 'link_before' => '<span class="i-v appear">',
+								'link_after' => '</span>', */
+							)
+						);
+					?>
+				</nav>
 				
 			</div> <!-- end site header inner -->
 		</header>
