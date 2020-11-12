@@ -16,7 +16,7 @@ siteNavToggle.addEventListener( 'click', toggleNav );
 
 // stagger nav items animation
 const minimumDelay = 0;
-const incrementDelay = 40;
+const incrementDelay = 60;
 let counter = 0;
 siteNavItems.forEach( (item) => {
     item.style.animationDelay = minimumDelay + ( counter * incrementDelay) + "ms";

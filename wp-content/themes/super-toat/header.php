@@ -47,7 +47,6 @@
 			aria-label="Menu"
 			aria-controls="site-nav"
 		>
-			<span class="hamburger-label">menu</span>
 			<span class="hamburger-box">
 				<span class="hamburger-inner"></span>
 			</span>
